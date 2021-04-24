@@ -5,11 +5,13 @@
 		{
 			session_start();
 			parent::__construct();
-			if($_SESSION['login']==false || !isset($_SESSION['login']))
+			
+			if( !isset($_SESSION['userData']))
 			{
 				header('Location: '.base_url());
 				die();
 			}
+			
 		}
 
 		public function dashboard()

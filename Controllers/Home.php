@@ -3,13 +3,15 @@
 	class Home extends Controllers{
 		public function __construct()
 		{
-			parent::__construct();
 			session_start();
-			if( isset($_SESSION['login']))
+			parent::__construct();
+			
+			if( isset($_SESSION['userData']))
 			{
 				header('Location: '.base_url().'/dashboard');
 				die();
 			}
+			
 		}
 
 		public function home()

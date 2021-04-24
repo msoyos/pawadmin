@@ -3,9 +3,14 @@
 	class Productos extends Controllers{
 		public function __construct()
 		{
-			parent::__construct();
-
 			session_start();
+			parent::__construct();
+			
+			if( !isset($_SESSION['userData']))
+			{
+				header('Location: '.base_url());
+				die();
+			}
 		}
 
 		public function productos()

@@ -5,11 +5,6 @@
 		{
 			session_start();
 			parent::__construct();
-			if(isset($_SESSION['login']) || isset($_SESSION['userData']))
-			{
-				header('Location: '.base_url());
-				die();
-			}
 			
 		}
 
@@ -44,7 +39,7 @@
 							$arrResponse = array('status' => false, 'msg' => "Usuario se encuentra  suspendido, favor de contactar al administrador del sistema");
 						}else{
 						$_SESSION['idUser']  = $arrData['idpersona'];
-						$_SESSION['login'] = true;
+						$b=$_SESSION['login'] = true;
 						$arrDataL = $this->model->sessionLogin($_SESSION['idUser']);
 
 						$a= $_SESSION['idUser'];

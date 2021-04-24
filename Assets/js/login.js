@@ -53,6 +53,7 @@ function formulario(){
               * correcta
               * */
               var r = JSON.parse(data);
+              console.log(r);
               if(r.status==true){
                 location.reload();
               }else{
